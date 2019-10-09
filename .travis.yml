@@ -1,4 +1,7 @@
 language: rust
+script:
+  - cargo test --verbose
+  - cargo test --verbose --features binary_coded_decimal
 matrix:
   include:
     - rust: stable
@@ -28,3 +31,6 @@ matrix:
   allow_failures:
     - rust: nightly
   fast_finish: true
+
+cache:
+  cargo: true
